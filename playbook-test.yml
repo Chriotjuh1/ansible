@@ -1,0 +1,11 @@
+---
+
+- hosts: all
+  tasks:
+    - name: Testbericht printen
+      debug:
+        msg: Dit is een testbericht van Chris
+
+
+
+
