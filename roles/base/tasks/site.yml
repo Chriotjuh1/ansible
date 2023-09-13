@@ -1,0 +1,33 @@
+---
+
+ - hosts: all
+   become: true
+   roles:
+     - base
+
+ - hosts: web_servers
+   become: true
+   roles:
+     - web_servers
+
+ - hosts: db_servers
+   become: true
+   roles:
+     - db_servers
+
+ - hosts: file_servers
+   become: true
+   roles:
+     - file_servers
+
+
+
+ - hosts: 192.168.1.143
+   tasks:
+    - name: copy html file for site
+      copy:
+        src: index.php
+        dest: /var/www/html/index.php
+        owner: root
+        group: root
+        mode: 0644
