@@ -1,0 +1,18 @@
+---
+
+ - hosts: 192.168.1.139
+   tasks:
+    - name: kopieer index.php naar de Apache-server
+      copy:
+        src: index.php
+        dest: /var/www/html/
+        mode: 0644
+
+    - name: kopieer testpagina.php naar de Apache-server
+      copy:
+        src: testpagina.php
+        dest: /var/www/html/
+        mode: 0644
+
+
+
